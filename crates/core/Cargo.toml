@@ -1,0 +1,22 @@
+[package]
+name = "rpc_core"
+version = "2.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rpc_openschema = { path = "../open_schema" }
+
+dbg = { path = "../../dbg" }
+errs = { path = "../../errs" }
+injector = { path = "../../injector" }
+callbacks = { path = "../../callbacks" }
+
+tokio = { version = "1.36.0", features = ["full"] }
+tracing = "0.1.40"
+once_cell = "1.19.0"
+
+serde = { version = "1.0.197", features = ["derive", "rc"] }
+serde_json = { version = "1.0.114" }
+serde_repr = { version = "0.1.18" }

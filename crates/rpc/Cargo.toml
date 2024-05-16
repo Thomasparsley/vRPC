@@ -1,0 +1,22 @@
+[package]
+name = "rpc"
+version = "2.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+full = [
+    "dep:rpc_core",
+    "dep:rpc_server",
+    "dep:rpc_openschema",
+    "dep:rpc_macros",
+]
+core = ["dep:rpc_core", "dep:rpc_openschema", "dep:rpc_macros"]
+openschema = ["dep:rpc_openschema", "dep:rpc_macros"]
+
+[dependencies]
+rpc_core = { path = "../core", optional = true }
+rpc_server = { path = "../server", optional = true }
+rpc_openschema = { path = "../open_schema", optional = true }
+rpc_macros = { path = "../macros", optional = true }
